@@ -14,11 +14,11 @@ class PanelDeControl(Gtk.Window):
         self.add(self.notebook)
 
         # Agregar pestañas al cuaderno de notas
-        self.crear_pestaña("System and Security", [("Firewall", "gufw"), ("Setup repositories", "sakura -e pkexec setup-repos"), ("Cleaning system", "bleachbit"), ("GUI Package manager", "bauh")])
+        self.crear_pestaña("System and Security", [("Firewall", "firewall-config"), ("Setup repositories", "x-terminal-emulator -e pkexec setup-repos"), ("Cleaning system", "bleachbit"), ("GUI Package manager", "bauh")])
         self.crear_pestaña("Internet and Wireless", [("Network connections", "nm-connection-editor"), ("Bluetooth adapters", "blueman-adapters"), ("Bluetooth devices", "blueman-manager")])
-        self.crear_pestaña("Hardware and Sound", [("Setup print server", "sakura -e pkexec cups-switch"), ("Sound control", "pavucontrol")])
+        self.crear_pestaña("Hardware and Sound", [("Setup print server", "x-terminal-emulator -e pkexec cups-switch"), ("Sound control", "pavucontrol")])
         self.crear_pestaña("Users and Groups", [("Manage users and groups", "users-admin")])
-        self.crear_pestaña("Customization", [("Set appearance", "gnome-tweaks"), ("Sway configuration file", "gedit ~/.config/sway/config"), ("I3 configuration file", "gedit ~/.config/i3/config")])
+        self.crear_pestaña("Customization", [("Set appearance", "nwg-look"), ("Sway configuration file", "gedit ~/.config/sway/config"), ("I3 configuration file", "gedit ~/.config/i3/config")])
 
     def crear_pestaña(self, nombre, comandos):
         # Crear una nueva categoría (Gtk.Box) para cada pestaña
